@@ -16,5 +16,11 @@ namespace COMP2614Assign07ab
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ClientList clients = DatabaseConnection.GetClietList();
+            label1.Text = $"{clients.Count()}";
+        }
     }
 }
