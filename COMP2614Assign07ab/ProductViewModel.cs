@@ -16,7 +16,6 @@ namespace COMP2614Assign07ab
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public ClientList Clients { get; set; }
         public ProductViewModel()
         {
             this.Clients = DatabaseConnection.GetClietList();
@@ -32,7 +31,7 @@ namespace COMP2614Assign07ab
                 OnPropertyChanged();
             }
         }
-        /*
+        public ClientList Clients { get; set; }
         public void SetDisplayClient(Client client)
         {
             this.Client = new Client
@@ -54,6 +53,5 @@ namespace COMP2614Assign07ab
             OnPropertyChanged("Client");
             return this.Client;
         }
-        */
     }
 }

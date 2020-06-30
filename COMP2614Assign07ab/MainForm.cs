@@ -51,7 +51,7 @@ namespace COMP2614Assign07ab
             dataGridViewClients.AllowUserToResizeColumns = false;
             dataGridViewClients.AllowUserToResizeRows = false;
             dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
-
+            
             //add columns
             DataGridViewTextBoxColumn id = new DataGridViewTextBoxColumn();
             id.Name = "clientCode";
@@ -134,6 +134,7 @@ namespace COMP2614Assign07ab
             ytdSales.Width = 60;
             ytdSales.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             ytdSales.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ytdSales.DefaultCellStyle.Format = "N2";
             ytdSales.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(ytdSales);
 
@@ -155,6 +156,51 @@ namespace COMP2614Assign07ab
             notes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             notes.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(notes);
+        }
+
+        private void dataGridViewClients_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = dataGridViewClients.CurrentRow.Index;
+
+            Client client = productVM.Clients[index];
+            productVM.SetDisplayClient(client);
+
+            labelClientLegend.Text = string.Empty;
+            labelClientData.Text = string.Empty;
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            int index = dataGridViewClients.CurrentRow.Index;
+
+            Client client = productVM.GetDisplayClient();
+            productVM.Clients[index] = client;
+            productVM.Clients.ResetItem(index);
+
+            string outputLegend = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
+                                                "Client Code:",
+                                                "Company Name:",
+                                                "Address 1:",
+                                                "Address 2:",
+                                                "City:",
+                                                "Province:",
+                                                "Postal Code:",
+                                                "YTD Sales:",
+                                                "Notes:",
+                                                "Credit Hold:");
+            string outputData = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
+                                               client.ClientCode,
+                                               client.CompanyName,
+                                               client.Address1,
+                                               client.Address2,
+                                               client.City,
+                                               client.Province,
+                                               client.PostalCode,
+                                               client.YTDSales,
+                                               client.Notes,
+                                               client.CreditHold);
+            labelClientLegend.Text = outputLegend;
+            labelClientData.Text = outputData;
         }
     }
 }
