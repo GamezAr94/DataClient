@@ -57,7 +57,18 @@ namespace COMP2614Assign07ab
                             ytdSales =(decimal)reader["YTDSales"];
                             creditHold = (bool)reader["CreditHold"];
                             notes = reader.IsDBNull(9) ? null : reader["Notes"] as string;
-                            clients.Add(new Client(clientCode, companyName, address1, address2, city, province, postalCode, ytdSales, creditHold, notes));
+                            clients.Add(new Client() { 
+                                ClientCode = clientCode, 
+                                CompanyName = companyName, 
+                                Address1 = address1, 
+                                Address2 = address2,
+                                City= city,
+                                Province = province,
+                                PostalCode = postalCode, 
+                                YTDSales = ytdSales,
+                                CreditHold = creditHold, 
+                                Notes = notes 
+                            });
                         }
                     }
                 }
