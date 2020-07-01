@@ -9,14 +9,14 @@ using System.Runtime.CompilerServices;
 
 namespace COMP2614Assign07ab
 {
-    class ProductViewModel : INotifyPropertyChanged
+    class ClientViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public ProductViewModel()
+        public ClientViewModel()
         {
             this.Clients = DatabaseConnection.GetClietList();
             this.Client = new Client();

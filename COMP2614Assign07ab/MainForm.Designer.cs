@@ -66,7 +66,7 @@
             // textBoxCompanyN
             // 
             this.textBoxCompanyN.Location = new System.Drawing.Point(158, 14);
-            this.textBoxCompanyN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCompanyN.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCompanyN.Name = "textBoxCompanyN";
             this.textBoxCompanyN.Size = new System.Drawing.Size(148, 24);
             this.textBoxCompanyN.TabIndex = 1;
@@ -84,7 +84,7 @@
             // textBoxAddress1
             // 
             this.textBoxAddress1.Location = new System.Drawing.Point(158, 41);
-            this.textBoxAddress1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAddress1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddress1.Name = "textBoxAddress1";
             this.textBoxAddress1.Size = new System.Drawing.Size(148, 24);
             this.textBoxAddress1.TabIndex = 3;
@@ -102,7 +102,7 @@
             // textBoxAddress2
             // 
             this.textBoxAddress2.Location = new System.Drawing.Point(158, 68);
-            this.textBoxAddress2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAddress2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddress2.Name = "textBoxAddress2";
             this.textBoxAddress2.Size = new System.Drawing.Size(148, 24);
             this.textBoxAddress2.TabIndex = 5;
@@ -120,7 +120,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(158, 96);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(148, 24);
             this.textBoxCity.TabIndex = 7;
@@ -138,7 +138,7 @@
             // textBoxProvince
             // 
             this.textBoxProvince.Location = new System.Drawing.Point(158, 125);
-            this.textBoxProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxProvince.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxProvince.Name = "textBoxProvince";
             this.textBoxProvince.Size = new System.Drawing.Size(148, 24);
             this.textBoxProvince.TabIndex = 9;
@@ -147,20 +147,20 @@
             // 
             this.checkBoxCreditHold.AutoSize = true;
             this.checkBoxCreditHold.Location = new System.Drawing.Point(31, 254);
-            this.checkBoxCreditHold.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxCreditHold.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCreditHold.Name = "checkBoxCreditHold";
             this.checkBoxCreditHold.Size = new System.Drawing.Size(105, 22);
-            this.checkBoxCreditHold.TabIndex = 10;
+            this.checkBoxCreditHold.TabIndex = 16;
             this.checkBoxCreditHold.Text = "Credit &Hold:";
             this.checkBoxCreditHold.UseVisualStyleBackColor = true;
             // 
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(173, 246);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(112, 32);
-            this.buttonSave.TabIndex = 11;
+            this.buttonSave.TabIndex = 17;
             this.buttonSave.Text = "Sa&ve";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -169,10 +169,10 @@
             // 
             this.dataGridViewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClients.Location = new System.Drawing.Point(13, 286);
-            this.dataGridViewClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewClients.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewClients.Name = "dataGridViewClients";
             this.dataGridViewClients.Size = new System.Drawing.Size(745, 204);
-            this.dataGridViewClients.TabIndex = 12;
+            this.dataGridViewClients.TabIndex = 18;
             this.dataGridViewClients.SelectionChanged += new System.EventHandler(this.dataGridViewClients_SelectionChanged);
             // 
             // labelPostalCode
@@ -182,16 +182,16 @@
             this.labelPostalCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPostalCode.Name = "labelPostalCode";
             this.labelPostalCode.Size = new System.Drawing.Size(94, 18);
-            this.labelPostalCode.TabIndex = 4;
+            this.labelPostalCode.TabIndex = 10;
             this.labelPostalCode.Text = "P&ostal Code:";
             // 
             // textBoxPostalCode
             // 
             this.textBoxPostalCode.Location = new System.Drawing.Point(158, 154);
-            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPostalCode.Name = "textBoxPostalCode";
             this.textBoxPostalCode.Size = new System.Drawing.Size(148, 24);
-            this.textBoxPostalCode.TabIndex = 5;
+            this.textBoxPostalCode.TabIndex = 11;
             // 
             // labelYTDSales
             // 
@@ -200,16 +200,16 @@
             this.labelYTDSales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelYTDSales.Name = "labelYTDSales";
             this.labelYTDSales.Size = new System.Drawing.Size(82, 18);
-            this.labelYTDSales.TabIndex = 6;
+            this.labelYTDSales.TabIndex = 12;
             this.labelYTDSales.Text = "&YTD Sales:";
             // 
             // textBoxYTDSales
             // 
             this.textBoxYTDSales.Location = new System.Drawing.Point(158, 183);
-            this.textBoxYTDSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxYTDSales.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxYTDSales.Name = "textBoxYTDSales";
             this.textBoxYTDSales.Size = new System.Drawing.Size(148, 24);
-            this.textBoxYTDSales.TabIndex = 7;
+            this.textBoxYTDSales.TabIndex = 13;
             // 
             // labelNotes
             // 
@@ -218,16 +218,16 @@
             this.labelNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNotes.Name = "labelNotes";
             this.labelNotes.Size = new System.Drawing.Size(52, 18);
-            this.labelNotes.TabIndex = 8;
+            this.labelNotes.TabIndex = 14;
             this.labelNotes.Text = "&Notes:";
             // 
             // textBoxNotes
             // 
             this.textBoxNotes.Location = new System.Drawing.Point(158, 211);
-            this.textBoxNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNotes.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNotes.Name = "textBoxNotes";
             this.textBoxNotes.Size = new System.Drawing.Size(148, 24);
-            this.textBoxNotes.TabIndex = 9;
+            this.textBoxNotes.TabIndex = 15;
             // 
             // labelClientLegend
             // 
@@ -237,7 +237,7 @@
             this.labelClientLegend.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelClientLegend.Name = "labelClientLegend";
             this.labelClientLegend.Size = new System.Drawing.Size(16, 162);
-            this.labelClientLegend.TabIndex = 13;
+            this.labelClientLegend.TabIndex = 19;
             this.labelClientLegend.Text = "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9";
             // 
             // labelClientData
@@ -247,7 +247,7 @@
             this.labelClientData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelClientData.Name = "labelClientData";
             this.labelClientData.Size = new System.Drawing.Size(49, 162);
-            this.labelClientData.TabIndex = 14;
+            this.labelClientData.TabIndex = 20;
             this.labelClientData.Text = "One\r\nTwo\r\nThree\r\nFour\r\nFive\r\nSix\r\nSeven\r\nEight\r\nNine";
             // 
             // MainForm
@@ -280,7 +280,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

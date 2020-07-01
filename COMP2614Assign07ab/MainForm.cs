@@ -12,7 +12,7 @@ namespace COMP2614Assign07ab
 {
     public partial class MainForm : Form
     {
-        private ProductViewModel productVM;
+        private ClientViewModel clientVM;
         public MainForm()
         {
             InitializeComponent();
@@ -20,26 +20,26 @@ namespace COMP2614Assign07ab
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            productVM = new ProductViewModel();
+            clientVM = new ClientViewModel();
             setBindings();
             setupDataGridView();
         }
 
         private void setBindings()
         {
-            textBoxCompanyN.DataBindings.Add("Text", productVM, "Client.CompanyName");
-            textBoxAddress1.DataBindings.Add("Text", productVM, "Client.Address1");
-            textBoxAddress2.DataBindings.Add("Text", productVM, "Client.Address2");
-            textBoxCity.DataBindings.Add("Text", productVM, "Client.City");
-            textBoxProvince.DataBindings.Add("Text", productVM, "Client.Province");
-            textBoxPostalCode.DataBindings.Add("Text", productVM, "Client.PostalCode");
-            textBoxYTDSales.DataBindings.Add("Text", productVM, "Client.YTDSales",
+            textBoxCompanyN.DataBindings.Add("Text", clientVM, "Client.CompanyName");
+            textBoxAddress1.DataBindings.Add("Text", clientVM, "Client.Address1");
+            textBoxAddress2.DataBindings.Add("Text", clientVM, "Client.Address2");
+            textBoxCity.DataBindings.Add("Text", clientVM, "Client.City");
+            textBoxProvince.DataBindings.Add("Text", clientVM, "Client.Province");
+            textBoxPostalCode.DataBindings.Add("Text", clientVM, "Client.PostalCode");
+            textBoxYTDSales.DataBindings.Add("Text", clientVM, "Client.YTDSales",
                                                 true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00);0.00");
-            checkBoxCreditHold.DataBindings.Add("Checked", productVM, "Client.CreditHold");
-            textBoxNotes.DataBindings.Add("Text", productVM, "Client.Notes");
+            checkBoxCreditHold.DataBindings.Add("Checked", clientVM, "Client.CreditHold");
+            textBoxNotes.DataBindings.Add("Text", clientVM, "Client.Notes");
 
             dataGridViewClients.AutoGenerateColumns = false;
-            dataGridViewClients.DataSource = productVM.Clients;
+            dataGridViewClients.DataSource = clientVM.Clients;
         }
         private void setupDataGridView()
         {
@@ -52,7 +52,6 @@ namespace COMP2614Assign07ab
             dataGridViewClients.AllowUserToResizeRows = false;
             dataGridViewClients.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
             
-            //add columns
             DataGridViewTextBoxColumn id = new DataGridViewTextBoxColumn();
             id.Name = "clientCode";
             id.DataPropertyName = "ClientCode";
@@ -162,8 +161,8 @@ namespace COMP2614Assign07ab
         {
             int index = dataGridViewClients.CurrentRow.Index;
 
-            Client client = productVM.Clients[index];
-            productVM.SetDisplayClient(client);
+            Client client = clientVM.Clients[index];
+            clientVM.SetDisplayClient(client);
 
             labelClientLegend.Text = string.Empty;
             labelClientData.Text = string.Empty;
@@ -173,9 +172,9 @@ namespace COMP2614Assign07ab
         {
             int index = dataGridViewClients.CurrentRow.Index;
 
-            Client client = productVM.GetDisplayClient();
-            productVM.Clients[index] = client;
-            productVM.Clients.ResetItem(index);
+            Client client = clientVM.GetDisplayClient();
+            clientVM.Clients[index] = client;
+            clientVM.Clients.ResetItem(index);
 
             string outputLegend = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
                                                 "Client Code:",
@@ -188,6 +187,7 @@ namespace COMP2614Assign07ab
                                                 "YTD Sales:",
                                                 "Notes:",
                                                 "Credit Hold:");
+
             string outputData = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
                                                client.ClientCode,
                                                client.CompanyName,
