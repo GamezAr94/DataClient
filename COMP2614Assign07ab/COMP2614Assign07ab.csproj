@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientList.cs" />
+    <Compile Include="ClientViewModelBase.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="EditDialog.cs">
       <SubType>Form</SubType>
