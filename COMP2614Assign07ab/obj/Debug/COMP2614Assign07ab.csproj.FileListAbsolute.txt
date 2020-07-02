@@ -7,3 +7,4 @@ C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Develop
 C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\COMP2614Assign07ab\obj\Debug\COMP2614Assign07ab.exe
 C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\COMP2614Assign07ab\obj\Debug\COMP2614Assign07ab.pdb
 C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\COMP2614Assign07ab\obj\Debug\COMP2614Assign07ab.MainForm.resources
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\COMP2614Assign07ab\obj\Debug\COMP2614Assign07ab.EditDialog.resources

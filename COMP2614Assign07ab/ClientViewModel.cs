@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace COMP2614Assign07ab
 {
-    class ClientViewModel : INotifyPropertyChanged
+    public class ClientViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")

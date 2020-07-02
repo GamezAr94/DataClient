@@ -1,6 +1,6 @@
 ﻿namespace COMP2614Assign07ab
 {
-    class Client
+    public class Client
     {
         public string ClientCode { get; set; }
         public string CompanyName { get; set; }

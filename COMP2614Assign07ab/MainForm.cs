@@ -27,17 +27,6 @@ namespace COMP2614Assign07ab
 
         private void setBindings()
         {
-            textBoxCompanyN.DataBindings.Add("Text", clientVM, "Client.CompanyName");
-            textBoxAddress1.DataBindings.Add("Text", clientVM, "Client.Address1");
-            textBoxAddress2.DataBindings.Add("Text", clientVM, "Client.Address2");
-            textBoxCity.DataBindings.Add("Text", clientVM, "Client.City");
-            textBoxProvince.DataBindings.Add("Text", clientVM, "Client.Province");
-            textBoxPostalCode.DataBindings.Add("Text", clientVM, "Client.PostalCode");
-            textBoxYTDSales.DataBindings.Add("Text", clientVM, "Client.YTDSales",
-                                                true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00);0.00");
-            checkBoxCreditHold.DataBindings.Add("Checked", clientVM, "Client.CreditHold");
-            textBoxNotes.DataBindings.Add("Text", clientVM, "Client.Notes");
-
             dataGridViewClients.AutoGenerateColumns = false;
             dataGridViewClients.DataSource = clientVM.Clients;
         }
@@ -163,44 +152,20 @@ namespace COMP2614Assign07ab
 
             Client client = clientVM.Clients[index];
             clientVM.SetDisplayClient(client);
-
-            labelClientLegend.Text = string.Empty;
-            labelClientData.Text = string.Empty;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void buttonEditRecord_Click(object sender, EventArgs e)
         {
-            int index = dataGridViewClients.CurrentRow.Index;
-
-            Client client = clientVM.GetDisplayClient();
-            clientVM.Clients[index] = client;
-            clientVM.Clients.ResetItem(index);
-
-            string outputLegend = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
-                                                "Client Code:",
-                                                "Company Name:",
-                                                "Address 1:",
-                                                "Address 2:",
-                                                "City:",
-                                                "Province:",
-                                                "Postal Code:",
-                                                "YTD Sales:",
-                                                "Notes:",
-                                                "Credit Hold:");
-
-            string outputData = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n",
-                                               client.ClientCode,
-                                               client.CompanyName,
-                                               client.Address1,
-                                               client.Address2,
-                                               client.City,
-                                               client.Province,
-                                               client.PostalCode,
-                                               client.YTDSales,
-                                               client.Notes,
-                                               client.CreditHold);
-            labelClientLegend.Text = outputLegend;
-            labelClientData.Text = outputData;
+            EditDialog dig = new EditDialog();
+            dig.ClientVM = this.clientVM;
+            DialogResult result = dig.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                int index = dataGridViewClients.CurrentRow.Index;
+                Client client = clientVM.GetDisplayClient();
+                clientVM.Clients[index] = client;
+            }
+            dig.Dispose();
         }
     }
 }

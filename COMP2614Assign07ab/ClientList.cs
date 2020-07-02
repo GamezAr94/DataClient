@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace COMP2614Assign07ab
 {
-    class ClientList:BindingList<Client>
+    public class ClientList:BindingList<Client>
     {
     }
 }
