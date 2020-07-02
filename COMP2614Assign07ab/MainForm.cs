@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿/*
+ * Author: Arturo Gamez Ortega
+ * COMP 2614
+ * Assignment 07 ab
+ * Jul-02-2020
+ */
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COMP2614Assign07ab
@@ -17,7 +17,7 @@ namespace COMP2614Assign07ab
         {
             InitializeComponent();
         }
-
+        //Loading the main form
         private void MainForm_Load(object sender, EventArgs e)
         {
             clientVM = new ClientViewModel();
@@ -145,7 +145,7 @@ namespace COMP2614Assign07ab
             notes.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(notes);
         }
-
+        //hold the information from the row selected
         private void dataGridViewClients_SelectionChanged(object sender, EventArgs e)
         {
             int index = dataGridViewClients.CurrentRow.Index;
@@ -153,7 +153,7 @@ namespace COMP2614Assign07ab
             Client client = clientVM.Clients[index];
             clientVM.SetDisplayClient(client);
         }
-
+        //shows a dialog form and sends to it the information of the row selected
         private void buttonEditRecord_Click(object sender, EventArgs e)
         {
             EditDialog dig = new EditDialog();

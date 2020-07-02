@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COMP2614Assign07ab
@@ -22,6 +15,7 @@ namespace COMP2614Assign07ab
         {
             setBindings();
         }
+        //sets the bindings to all the fields in the dialogform
         public void setBindings()
         {
             textBoxCompanyN.DataBindings.Add("Text", ClientVM, "Client.CompanyName");
@@ -35,7 +29,7 @@ namespace COMP2614Assign07ab
             checkBoxCreditHold.DataBindings.Add("Checked", ClientVM, "Client.CreditHold");
             textBoxNotes.DataBindings.Add("Text", ClientVM, "Client.Notes");
         }
-
+        //Set the dialog result to OK
         private void buttonSave_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
