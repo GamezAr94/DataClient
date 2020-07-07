@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.ComponentModel;
 
-namespace COMP2614Assign07ab
+namespace COMP2614Assign07ab.Common
 {
     public class ClientList:BindingList<Client>
     {

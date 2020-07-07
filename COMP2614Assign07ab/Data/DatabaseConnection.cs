@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using COMP2614Assign07ab.Common;
 
-namespace COMP2614Assign07ab
+namespace COMP2614Assign07ab.Data
 {
     class DatabaseConnection
     {
@@ -23,7 +24,7 @@ namespace COMP2614Assign07ab
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = @"SELECT *
-                                FROM Client123456;";
+                                FROM Client1042699;";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;

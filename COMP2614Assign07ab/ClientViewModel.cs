@@ -1,4 +1,7 @@
 ﻿
+using COMP2614Assign07ab.Common;
+using COMP2614Assign07ab.Data;
+
 namespace COMP2614Assign07ab
 {
     public class ClientViewModel : ClientViewModelBase 

@@ -1,4 +1,4 @@
-﻿namespace COMP2614Assign07ab
+﻿namespace COMP2614Assign07ab.Common
 {
     public class Client
     {
