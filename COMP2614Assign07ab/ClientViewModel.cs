@@ -8,7 +8,7 @@ namespace COMP2614Assign07ab
     { 
         public ClientViewModel()
         {
-            this.Clients = DatabaseConnection.GetClietList();
+            this.Clients = Repository.GetClietList();
             this.Client = new Client();
         }
         private Client client;

@@ -9,7 +9,7 @@ using COMP2614Assign07ab.Common;
 
 namespace COMP2614Assign07ab.Data
 {
-    class DatabaseConnection
+    class Repository
     {
         private static readonly string connString = @"Server=tcp:comp2614.database.windows.net,1433; 
                                                         Initial Catalog=comp2614; 
