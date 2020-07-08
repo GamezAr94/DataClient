@@ -18,12 +18,12 @@ namespace COMP2614Assign07ab.Data
                                                         Encrypt=True; 
                                                         TrustServerCertificate=False; 
                                                         Connection Timeout=30;";
-        public static ClientList GetClietList()
+        public static ClientList GetClientList()
         {
             ClientList clients;
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                string query = @"SELECT *
+                string query = @"SELECT ClientCode, CompanyName, Address1, Address2, City, Province, PostalCode, YTDSales, CreditHold, Notes
                                 FROM Client1042699;";
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -75,6 +75,98 @@ namespace COMP2614Assign07ab.Data
                 }
                 return clients;
             }
+        }
+        public static int AddClient(Client client)
+        {
+            int rowsAffected;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = $@"INSERT INTO Client1042699 
+                        (CompanyName, Address1, Address2, City, Provnce, PostalCode, YTDSales, CreditHold, Notes)
+                        VALUES (@companyName, @address1, @address2, @city, @province, @postalCode, @ytdSales, @creditHold, @notes);";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    cmd.Parameters.AddWithValue("companyName", client.CompanyName);
+                    cmd.Parameters.AddWithValue("address1", client.Address1);
+                    cmd.Parameters.AddWithValue("address2", (object)client.Address2??DBNull.Value);
+                    cmd.Parameters.AddWithValue("city", (object)client.City ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("province", client.Province);
+                    cmd.Parameters.AddWithValue("postalCode", (object)client.PostalCode??DBNull.Value);
+                    cmd.Parameters.AddWithValue("ytdSales",client.YTDSales);
+                    cmd.Parameters.AddWithValue("creditHold", client.CreditHold);
+                    cmd.Parameters.AddWithValue("notes", (object)client.Notes ?? DBNull.Value);
+
+                    conn.Open();
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+                return rowsAffected;
+        }
+        public static int UpdateClient(Client client)
+        {
+            int rowsAffected;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = $@"UPDATE Client1042699
+                                SET CompanyName = @companyName,
+                                Address1 = @address1,
+                                Address2 = @address2,
+                                City = @city,
+                                Province = @province,
+                                PostalCode = @postalCode,
+                                YTDSales = @ytdSales,
+                                CreditHold = @creditHold,
+                                Notes = @notes
+                                WHERE ClientCode = @clientCode;";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    cmd.Parameters.AddWithValue("companyName", client.CompanyName);
+                    cmd.Parameters.AddWithValue("address1", client.Address1);
+                    cmd.Parameters.AddWithValue("address2", (object)client.Address2 ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("city", (object)client.City ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("province", client.Province);
+                    cmd.Parameters.AddWithValue("postalCode", (object)client.PostalCode ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("ytdSales", client.YTDSales);
+                    cmd.Parameters.AddWithValue("creditHold", client.CreditHold);
+                    cmd.Parameters.AddWithValue("notes", (object)client.Notes ?? DBNull.Value);
+
+                    conn.Open();
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            return rowsAffected;
+        }
+        public static int DeleteClient(Client client)
+        {
+            int rowsAffected;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = $@"DELETE Client1042699
+                                WHERE ClientCode = @clientCode;";
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Connection = conn;
+
+                    cmd.Parameters.AddWithValue("clientCode", client.ClientCode);
+
+                    conn.Open();
+
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            return rowsAffected;
         }
     }
 }

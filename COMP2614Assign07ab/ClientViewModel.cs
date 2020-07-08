@@ -8,7 +8,7 @@ namespace COMP2614Assign07ab
     { 
         public ClientViewModel()
         {
-            this.Clients = Repository.GetClietList();
+            this.Clients = Repository.GetClientList();
             this.Client = new Client();
         }
         private Client client;

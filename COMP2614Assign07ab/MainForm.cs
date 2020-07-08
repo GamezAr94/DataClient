@@ -46,7 +46,7 @@ namespace COMP2614Assign07ab
             id.Name = "clientCode";
             id.DataPropertyName = "ClientCode";
             id.HeaderText = "Client Code";
-            id.Width = 60;
+            id.Width = 70;
             id.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             id.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -57,7 +57,7 @@ namespace COMP2614Assign07ab
             companyN.Name = "companyName";
             companyN.DataPropertyName = "CompanyName";
             companyN.HeaderText = "Company Name";
-            companyN.Width = 100;
+            companyN.Width = 110;
             companyN.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             companyN.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             companyN.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -68,7 +68,7 @@ namespace COMP2614Assign07ab
             add1.Name = "address1";
             add1.DataPropertyName = "Address1";
             add1.HeaderText = "Address 1";
-            add1.Width = 100;
+            add1.Width = 110;
             add1.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             add1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             add1.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -79,7 +79,7 @@ namespace COMP2614Assign07ab
             add2.Name = "address2";
             add2.DataPropertyName = "Address2";
             add2.HeaderText = "Address 2";
-            add2.Width = 55;
+            add2.Width = 70;
             add2.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             add2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             add2.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -90,7 +90,7 @@ namespace COMP2614Assign07ab
             city.Name = "city";
             city.DataPropertyName = "City";
             city.HeaderText = "City";
-            city.Width = 55;
+            city.Width = 80;
             city.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             city.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             city.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -101,8 +101,8 @@ namespace COMP2614Assign07ab
             province.DataPropertyName = "Province";
             province.HeaderText = "Province";
             province.Width = 60;
-            province.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            province.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            province.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            province.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             province.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(province);
 
@@ -110,7 +110,7 @@ namespace COMP2614Assign07ab
             postalC.Name = "postalCode";
             postalC.DataPropertyName = "PostalCode";
             postalC.HeaderText = "Postal Code";
-            postalC.Width = 60;
+            postalC.Width = 70;
             postalC.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             postalC.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             postalC.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -120,7 +120,7 @@ namespace COMP2614Assign07ab
             ytdSales.Name = "ytdSales";
             ytdSales.DataPropertyName = "YTDSales";
             ytdSales.HeaderText = "YTD Sales";
-            ytdSales.Width = 60;
+            ytdSales.Width = 80;
             ytdSales.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             ytdSales.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             ytdSales.DefaultCellStyle.Format = "N2";
@@ -131,7 +131,7 @@ namespace COMP2614Assign07ab
             creditH.Name = "creditHold";
             creditH.DataPropertyName = "CreditHold";
             creditH.HeaderText = "Credit Hold";
-            creditH.Width = 30;
+            creditH.Width = 20;
             creditH.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             creditH.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(creditH);
@@ -140,17 +140,16 @@ namespace COMP2614Assign07ab
             notes.Name = "notes";
             notes.DataPropertyName = "Notes";
             notes.HeaderText = "Notes";
-            notes.Width = 90;
-            notes.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            notes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            notes.Width = 130;
+            notes.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            notes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             notes.SortMode = DataGridViewColumnSortMode.NotSortable;
             dataGridViewClients.Columns.Add(notes);
         }
         //hold the information from the row selected
         private void dataGridViewClients_SelectionChanged(object sender, EventArgs e)
         {
-            int index = dataGridViewClients.CurrentRow.Index;
-
+            int index = Math.Max(0,dataGridViewClients.CurrentRow.Index);
             Client client = clientVM.Clients[index];
             clientVM.SetDisplayClient(client);
         }

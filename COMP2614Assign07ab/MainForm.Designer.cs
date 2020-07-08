@@ -43,14 +43,14 @@
             this.dataGridViewClients.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewClients.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewClients.Name = "dataGridViewClients";
-            this.dataGridViewClients.Size = new System.Drawing.Size(752, 330);
+            this.dataGridViewClients.Size = new System.Drawing.Size(888, 373);
             this.dataGridViewClients.TabIndex = 1;
             this.dataGridViewClients.SelectionChanged += new System.EventHandler(this.dataGridViewClients_SelectionChanged);
             // 
             // buttonEditRecord
             // 
             this.buttonEditRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEditRecord.Location = new System.Drawing.Point(654, 350);
+            this.buttonEditRecord.Location = new System.Drawing.Point(790, 393);
             this.buttonEditRecord.Name = "buttonEditRecord";
             this.buttonEditRecord.Size = new System.Drawing.Size(111, 27);
             this.buttonEditRecord.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.AcceptButton = this.buttonEditRecord;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 384);
+            this.ClientSize = new System.Drawing.Size(914, 427);
             this.Controls.Add(this.buttonEditRecord);
             this.Controls.Add(this.dataGridViewClients);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
