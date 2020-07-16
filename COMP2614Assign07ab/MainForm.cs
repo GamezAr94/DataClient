@@ -4,7 +4,7 @@
  * Assignment 07 ab
  * Jul-02-2020
  */
-using COMP2614Assign07ab.Common;
+using Common;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

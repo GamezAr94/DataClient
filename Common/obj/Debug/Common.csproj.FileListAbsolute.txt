@@ -1,0 +1,5 @@
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\Common\bin\Debug\Common.dll
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\Common\bin\Debug\Common.pdb
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\Common\obj\Debug\Common.dll
+C:\Users\Arturo\Desktop\BCIT\2020\Summer 2020\Comp 2614 - C# Application Development\Last Assignment\DataClient\Common\obj\Debug\Common.pdb

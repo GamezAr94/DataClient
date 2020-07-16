@@ -1,6 +1,5 @@
-﻿
-using COMP2614Assign07ab.Common;
-using COMP2614Assign07ab.Data;
+﻿using Common;
+using Data;
 
 namespace COMP2614Assign07ab
 {

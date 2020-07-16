@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using COMP2614Assign07ab.Common;
 
-namespace COMP2614Assign07ab.Data
+namespace Data
 {
-    class Repository
+    public class Repository
     {
         private static readonly string connString = @"Server=tcp:comp2614.database.windows.net,1433; 
                                                         Initial Catalog=comp2614; 
@@ -51,24 +47,25 @@ namespace COMP2614Assign07ab.Data
                             clientCode = reader["ClientCode"] as string;
                             companyName = reader["CompanyName"] as string;
                             address1 = reader["Address1"] as string;
-                            address2 = reader.IsDBNull(3)?null:reader["Address2"] as string;
-                            city = reader.IsDBNull(4)?null:reader["City"] as string;
+                            address2 = reader.IsDBNull(3) ? null : reader["Address2"] as string;
+                            city = reader.IsDBNull(4) ? null : reader["City"] as string;
                             province = reader["Province"] as string;
-                            postalCode = reader.IsDBNull(6) ? null:reader["PostalCode"] as string;
-                            ytdSales =(decimal)reader["YTDSales"];
+                            postalCode = reader.IsDBNull(6) ? null : reader["PostalCode"] as string;
+                            ytdSales = (decimal)reader["YTDSales"];
                             creditHold = (bool)reader["CreditHold"];
                             notes = reader.IsDBNull(9) ? null : reader["Notes"] as string;
-                            clients.Add(new Client() { 
-                                ClientCode = clientCode, 
-                                CompanyName = companyName, 
-                                Address1 = address1, 
+                            clients.Add(new Client()
+                            {
+                                ClientCode = clientCode,
+                                CompanyName = companyName,
+                                Address1 = address1,
                                 Address2 = address2,
-                                City= city,
+                                City = city,
                                 Province = province,
-                                PostalCode = postalCode, 
+                                PostalCode = postalCode,
                                 YTDSales = ytdSales,
-                                CreditHold = creditHold, 
-                                Notes = notes 
+                                CreditHold = creditHold,
+                                Notes = notes
                             });
                         }
                     }
@@ -92,11 +89,11 @@ namespace COMP2614Assign07ab.Data
 
                     cmd.Parameters.AddWithValue("companyName", client.CompanyName);
                     cmd.Parameters.AddWithValue("address1", client.Address1);
-                    cmd.Parameters.AddWithValue("address2", (object)client.Address2??DBNull.Value);
+                    cmd.Parameters.AddWithValue("address2", (object)client.Address2 ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("city", (object)client.City ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("province", client.Province);
-                    cmd.Parameters.AddWithValue("postalCode", (object)client.PostalCode??DBNull.Value);
-                    cmd.Parameters.AddWithValue("ytdSales",client.YTDSales);
+                    cmd.Parameters.AddWithValue("postalCode", (object)client.PostalCode ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("ytdSales", client.YTDSales);
                     cmd.Parameters.AddWithValue("creditHold", client.CreditHold);
                     cmd.Parameters.AddWithValue("notes", (object)client.Notes ?? DBNull.Value);
 
@@ -105,7 +102,7 @@ namespace COMP2614Assign07ab.Data
                     rowsAffected = cmd.ExecuteNonQuery();
                 }
             }
-                return rowsAffected;
+            return rowsAffected;
         }
         public static int UpdateClient(Client client)
         {

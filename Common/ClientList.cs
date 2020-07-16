@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.Linq;
 
-namespace COMP2614Assign07ab.Common
+namespace Common
 {
-    public class ClientList:BindingList<Client>
+    public class ClientList : BindingList<Client>
     {
         //Lambda expressions
         public decimal TotalYTSales => this.Sum(x => x.YTDSales);

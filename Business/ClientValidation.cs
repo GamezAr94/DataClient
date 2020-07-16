@@ -1,14 +1,10 @@
-﻿using COMP2614Assign07ab.Common;
-using COMP2614Assign07ab.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Common;
+using Data;
 
-namespace COMP2614Assign07ab.Business
+namespace Business
 {
-    class ClientValidation
+    public class ClientValidation
     {
         private static readonly List<string> errors;
         public static string Errormessage
@@ -16,7 +12,7 @@ namespace COMP2614Assign07ab.Business
             get
             {
                 string message = "";
-                foreach(string line in errors)
+                foreach (string line in errors)
                 {
                     message += line + "\r\n";
                 }
@@ -76,7 +72,7 @@ namespace COMP2614Assign07ab.Business
             {
                 errors.Add("Province cannot be null or empty.");
             }
-            if(client.YTDSales < 0)
+            if (client.YTDSales < 0)
             {
                 errors.Add("YTDSales cannot be less than zero.");
             }
